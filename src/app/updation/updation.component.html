@@ -1,0 +1,28 @@
+<form [formGroup]="userForm">
+   
+    <div class="container">
+      <h1>Reset Password</h1>
+      
+      <hr>
+
+      <label for="username"><b>User Name</b></label>
+      <input type="text"  formControlName="username"   placeholder="Enter User Name" name="username" id="username" >
+      <div *ngIf="userForm.controls['username'].invalid && (userForm.controls['username'].dirty || userForm.controls['username'].touched)"
+    class="alert">
+
+  <div *ngIf="userForm.controls['username'].errors?.required">
+    username is required.
+  </div>
+  </div>
+  
+      
+    
+        
+      <button type="submit" class="resets" (click)="reset()">reset</button>
+   
+      
+    </div>
+  
+    
+  </form> 
+
